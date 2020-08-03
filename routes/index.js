@@ -3,7 +3,7 @@ const passport = require('passport');
 
 
 router.get('/', function(req, res) {
-  res.redirect('/users'); 
+  res.redirect('/recipes'); 
 });
 
 router.get('/auth/google', passport.authenticate(         

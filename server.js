@@ -24,9 +24,10 @@ require('./config/passport');
 
 
 // require our routes
-const indexRoutes = require('./routes/index');
-const recipesRoutes = require('./routes/recipes');
-
+const indexRouter = require('./routes/index');
+const recipesRouter = require('./routes/recipes');
+const reviewsRouter = require('./routes/reviews');
+const ingredientsRouter = require('./routes/ingredients');
 
 
 // view engine setup
@@ -52,8 +53,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/', indexRoutes);
-app.use('/', recipesRoutes);
+app.use('/', indexRouter);
+app.use('/', reviewsRouter);
+app.use('/', ingredientsRouter);
+app.use('/recipes', recipesRouter);
 
 
 
