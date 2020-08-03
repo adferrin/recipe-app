@@ -25,7 +25,7 @@ require('./config/passport');
 
 // require our routes
 const indexRoutes = require('./routes/index');
-const makersRoutes = require('./routes/makers');
+const recipesRoutes = require('./routes/recipes');
 
 
 
@@ -53,7 +53,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', indexRoutes);
-app.use('/', makersRoutes);
+app.use('/', recipesRoutes);
 
 
 
