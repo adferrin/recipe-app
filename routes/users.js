@@ -1,4 +1,5 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 const usersCtrl = require('../controllers/users');
 
 // Get users
@@ -10,7 +11,7 @@ router.get('/users', usersCtrl.index);
 router.post('/recipes', isLoggedIn, usersCtrl.addRecipe);  
 
 //Delete recipes /recipes/:id
-router.delete('/recipes/:id', isLoggedIn, usersCtrl.delRecipe);
+// router.delete('/recipes/:id', isLoggedIn, usersCtrl.delRecipe);
 
 
 //Middleware for the isLoggedIn function 

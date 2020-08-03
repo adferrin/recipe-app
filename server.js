@@ -28,6 +28,7 @@ const indexRouter = require('./routes/index');
 const recipesRouter = require('./routes/recipes');
 const reviewsRouter = require('./routes/reviews');
 const ingredientsRouter = require('./routes/ingredients');
+const userRouter = require('./routes/users');
 
 
 // view engine setup
@@ -56,6 +57,7 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/', reviewsRouter);
 app.use('/', ingredientsRouter);
+app.use('/', userRouter);
 app.use('/recipes', recipesRouter);
 
 

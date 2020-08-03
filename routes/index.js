@@ -1,9 +1,13 @@
+const express = require('express');
 const router = require('express').Router();
 const passport = require('passport');
 
 
+
 router.get('/', function(req, res) {
-  res.redirect('/recipes'); 
+  res.render('index', {
+    user: req.user
+  }); 
 });
 
 router.get('/auth/google', passport.authenticate(         
