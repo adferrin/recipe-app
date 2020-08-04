@@ -8,9 +8,9 @@ const reviewSchema = new Schema ({
         min: 1,
         max: 5,
     },
-});
+}, {timestamps: true});
 
-
+//recipe needs to point to userId
 const recipeSchema = new Schema ({
     name: String,
     region: String,
@@ -29,7 +29,7 @@ const recipeSchema = new Schema ({
         type: Boolean, default: false
     },
     reviews: [reviewSchema],
-});
+}, {timestamps: true});
 
 
 

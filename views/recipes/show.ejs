@@ -24,7 +24,7 @@
 
 
     <h2>Reviews</h2>
-    <form action="/reciepes/<%= recipe._id%>/reviews"
+    <form action="/recipes/<%= recipe._id%>/reviews"
         method="POST" id="add-review-form">
         <label>Review:</label>
         <textarea name="content"></textarea>
@@ -48,12 +48,12 @@
                 <tbody>
                     <!-- make totaling variable to add the avg review score -->
                     <% let total = 0 %>
-                    <% reciep.reviews.forEach(function (i) { %>
+                    <% recipe.reviews.forEach(function (r) { %>
                     <!-- aggregate the total ratings -->
-                    <% total += i.rating %>
+                    <% total += r.rating %>
                     <tr>
-                        <td><%= i.content %></td>
-                        <td><%= i.rating %></td>
+                        <td><%= r.content %></td>
+                        <td><%= r.rating %></td>
                     </tr>
                    <% }); %>
                    <tr>

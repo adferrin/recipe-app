@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Recipes for All!!!</title>
+  <title><%= title %></title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
   <!-- Materialize Icons -->
@@ -19,6 +19,9 @@
         <a href="" class="brand-logo left">Recipes!!!!</a>
             <!-- Place Login UI Here -->
             <ul class="right">
+              <li><a href="/ingredients/new" <%- title === 'Add Ingredient' ? 'class="active"' : '' %>>Add Ingredient</a></li>
+              <li><a href="/recipes/new" <%- title === 'Add Recipe' ? 'class="active"' : '' %>>Add Recipe</a></li>
+              <li><a href="/recipes" <%- title === 'All Recipes' ? 'class="active"' : '' %>>All Recipes</a></li>
               <li>
                 <% if (user) { %>
                   <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
@@ -28,3 +31,6 @@
               </li>
             </ul>
       </div>
+    </nav>
+    <main>
+      <h1><%= title %></h1>

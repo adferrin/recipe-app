@@ -1,4 +1,7 @@
 const User = require('../models/user');
+const Recipe = require('../models/recipe')
+
+
 
 module.exports = {
     index,
@@ -7,9 +10,13 @@ module.exports = {
 
 function index(req, res) {
     User.find({}, function(err, users) {
-        res.render('recipes/index', {
-            users,
-            user: req.user
+        Recipe.find({}, function(err, recipes) {
+            res.render('recipes/index', {
+                users,
+                user: req.user,
+                title: 'User',
+                recipes,
+            });
         });
     });
 }

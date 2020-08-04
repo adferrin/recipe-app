@@ -1,0 +1,33 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/recipes" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name">
+    <label>Region:</label>
+    <input type="text" name="region">
+        <p>
+    <label>
+        <input type="checkbox" class="filled-in"  name="gluten"/>
+        <span>Gluten Free</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="checkbox" class="filled-in" name="dariy" />
+        <span>Dairy Free</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="checkbox" class="filled-in"  name="vegan"/>
+        <span>Vegan</span>
+      </label>
+    </p>
+      <br>
+    <label>Process:</label>
+    <input type="text" name="process">
+    <input type="submit" value="Add Recipe">
+      
+</form>
+
+<%- include('../partials/footer') %>

@@ -6,7 +6,8 @@ const passport = require('passport');
 
 router.get('/', function(req, res) {
   res.render('index', {
-    user: req.user
+    user: req.user, 
+    title: 'User Information,'
   }); 
 });
 

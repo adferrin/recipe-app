@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
+const methodOverride = require('method-override');
 const port = process.env.PORT || '3000';
 
 
@@ -31,6 +32,7 @@ const ingredientsRouter = require('./routes/ingredients');
 const userRouter = require('./routes/users');
 
 
+
 // view engine setup
 app.set('view engine', 'ejs');
 
@@ -54,11 +56,13 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+// This order matters quite a lot, use all apps that dont have a :id after the ones that do
 app.use('/', indexRouter);
+app.use('/recipes', recipesRouter);
 app.use('/', reviewsRouter);
 app.use('/', ingredientsRouter);
 app.use('/', userRouter);
-app.use('/recipes', recipesRouter);
 
 
 
