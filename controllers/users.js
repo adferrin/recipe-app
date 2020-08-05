@@ -14,7 +14,7 @@ function index(req, res) {
             res.render('recipes/index', {
                 users,
                 user: req.user,
-                title: 'User',
+                title: 'All Recipes',
                 recipes,
             });
         });

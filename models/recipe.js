@@ -14,7 +14,7 @@ const reviewSchema = new Schema ({
 const recipeSchema = new Schema ({
     name: String,
     region: String,
-    ingredients: {
+    factor: {
         type: [{type: Schema.Types.ObjectId, ref: 'Ingredients'}],
         default: []
     },
@@ -26,7 +26,7 @@ const recipeSchema = new Schema ({
         type: Boolean, default: true
     },
     vegan: {
-        type: Boolean, default: false
+        type: Boolean
     },
     reviews: [reviewSchema],
 }, {timestamps: true});

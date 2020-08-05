@@ -27,7 +27,8 @@ function newIngredient(req, res) {
     Ingredient.find({}, function(err, ingredients) {
         res.render('ingredients/new', {
             ingredients,
-            title: 'Add Ingredients'
+            title: 'Add Ingredient',
+            user: req.user,
         });
     });
 }

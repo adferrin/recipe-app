@@ -17,24 +17,36 @@
     <!-- start ingredients list -->
     <div>Ingredients with measurements: </div>
     <ul>
-        <%- recipe.ingredients.map(i =>
+        <%- recipe.factor.map(i =>
         `<li>${i.name}</li>`).join('') %>
     </ul>
     <!-- end ingredients list -->
-
+</section>
+<!-- add ingredients form -->
+<form id="add-per-to-factor" action="/recipes/<%= recipe._id%>/ingredients" method="POST">
+<select name="ingredientId">
+    <%- ingredients.map(i => 
+    `<option value="${i._id}">${i.name}</option>`
+    ).join('') %>
+</select>
+    <button type="submit">Add Ingredient to Recipe</button>
+</form>
 
     <h2>Reviews</h2>
     <form action="/recipes/<%= recipe._id%>/reviews"
         method="POST" id="add-review-form">
-        <label>Review:</label>
+        <label>Review:</label> 
         <textarea name="content"></textarea>
+    <div class="input-field">
         <select name="rating">
+            <option value="">Choose your Rating</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
+    </div>
         <input type="submit" value="Add Review">
     </form>
     <% if (recipe.reviews.length) { %>
@@ -69,4 +81,12 @@
     <h5>No Reviews Yet</h5>
 
   <% } %>
-<%- include('../partials/footer') %>
+
+</main>
+    <script>
+          $(document).ready(function(){
+    $('select').formSelect();
+  });
+    </script>
+</body>
+</html>
