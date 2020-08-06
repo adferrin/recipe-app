@@ -45,6 +45,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // TODO Add session middleware here
+app.use(methodOverride('_method'));
 app.use(session({
   secret: 'MakingFood!',
   resave: false,

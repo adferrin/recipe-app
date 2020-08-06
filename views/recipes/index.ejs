@@ -18,6 +18,10 @@
             <td><%= r.dairy %></td>
             <td><%= r.vegan %></td>
             <td><a href="/recipes/<%= r._id%>">Details</a></td>
+            <td><a href="recipes/<%= r._id%>/edit">Edit</a></td>
+            <td><form id="delete-form" action="/recipes/<%= r._id%>?_method=DELETE" method="POST">
+            <button>Delete</button>
+            </form></td>
         </tr>
     <% }); %>
 </tbody>

@@ -1,6 +1,7 @@
 const Recipe = require('../models/recipe');
 const Ingredient = require('../models/ingredient');
-const User = require('../models/user')
+const User = require('../models/user');
+const reviews = require('./reviews');
 
 
 
@@ -9,8 +10,41 @@ module.exports = {
     show,
     new: newRecipe,
     create,
+    update,
+    edit,
+    delete: removeRecipe,
 };
 
+// function update(req, res) {
+//     Recipe.findByIdAndUpdate(
+//         req.params.id,
+//         req.body,
+//         { new: true },
+//     );
+// }
+
+function removeRecipe(req, res) {
+    Recipe.findByIdAndDelete(req.params.id, function(err, recipe) {
+        res.redirect('/recipes')
+    });
+}
+
+function edit(req, res) {
+    Recipe.findById(req.params.id, function(err, recipe) {
+        res.render('recipes/edit', {title: 'Edit Recipe', recipe, user: req.body})
+    });
+    
+}
+
+function update(req, res) {
+    Recipe.findByIdAndUpdate(
+        req.params.id, 
+        req.body,
+        { new: true }, 
+        function(err, recipe) {
+            res.redirect('recipes/:id/edit', {title: 'Recipe Details', recipe})
+        });
+}
 
 function index(req, res) {
     Recipe.find({}, function(err, recipes) {
