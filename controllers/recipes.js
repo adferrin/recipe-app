@@ -15,13 +15,6 @@ module.exports = {
     delete: removeRecipe,
 };
 
-// function update(req, res) {
-//     Recipe.findByIdAndUpdate(
-//         req.params.id,
-//         req.body,
-//         { new: true },
-//     );
-// }
 
 function removeRecipe(req, res) {
     Recipe.findByIdAndDelete(req.params.id, function(err, recipe) {
@@ -42,7 +35,7 @@ function update(req, res) {
         req.body,
         { new: true }, 
         function(err, recipe) {
-            res.redirect('recipes/:id/edit', {title: 'Recipe Details', recipe})
+            res.redirect('/recipes')
         });
 }
 
@@ -54,10 +47,10 @@ function index(req, res) {
 }
 
 function show(req, res) {
-    Recipe.findById(req.params.id).exec(function(err, recipe) {
+    Recipe.findById(req.params.id).populate('factor').exec(function(err, recipe) {
         console.log('recipe', recipe);
         Ingredient.find(
-            {_id: {$nin: recipe.ingredients}}, function(err, ingredients) {
+            {_id: {$nin: recipe.factor}}, function(err, ingredients) {
                 res.render('recipes/show', { title: 'Recipe Details', recipe, ingredients, user: req.user});
         }); 
     });
@@ -74,6 +67,7 @@ function create(req, res) {
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }
+    
     
     const recipe = new Recipe(req.body);
     recipe.save(function(err) {

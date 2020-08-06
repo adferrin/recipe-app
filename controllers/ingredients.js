@@ -1,16 +1,17 @@
 const Ingredient = require('../models/ingredient');
 const Recipe = require('../models/recipe');
+// const ingredient = require('../models/ingredient');
 
 
 module.exports = {
     new: newIngredient,
     create,
-    addToIngredients,
+    addToFactor,
 };
 
-function addToIngredients(req, res) {
+function addToFactor(req, res) {
     Recipe.findById(req.params.id, function(err, recipe) {
-        recipe.ingredient.push(req.body.ingredientId);
+        recipe.factor.push(req.body.ingredientId);
         recipe.save(function(err) {
             res.redirect(`/recipes/${recipe._id}`);
         });
@@ -18,7 +19,7 @@ function addToIngredients(req, res) {
 }
 
 function create(req, res) {
-    Ingredient.create(req.body, function(err, ingredient) {
+    Ingredient.create(req.body, function(err, ingredients) {
         res.redirect('/ingredients/new');
     });
 }

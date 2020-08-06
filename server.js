@@ -3,12 +3,13 @@ const morgan = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
-const port = process.env.PORT || '3000';
+
 
 
 //method over ride allows the ability to delete 
 // We'll need to load the env vars
 require('dotenv').config();
+const port = process.env.PORT || '3000';
 
 
 
