@@ -1,0 +1,36 @@
+
+body {
+    font-family: 'Lobster', cursive;
+    /* color: white; */
+    font-size: 30px;
+    /* background: url('../images/food1.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; */
+}
+
+button {
+    font-family: 'Lobster', cursive;
+}
+
+input {
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+    /* color: white; */
+}
+
+label {
+    font-size: 30px;
+    /* color: white; */
+}
+
+span {
+    font-size: 28px;
+    /* color: white; */
+}
+
+form {
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
+    /* color: white; */
+}

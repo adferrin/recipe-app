@@ -28,6 +28,9 @@ const recipeSchema = new Schema ({
     vegan: {
         type: Boolean
     },
+    author: {
+        type: Schema.Types.ObjectId, ref: 'User'
+    },
     reviews: [reviewSchema],
 }, {timestamps: true});
 

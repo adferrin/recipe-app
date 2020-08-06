@@ -17,11 +17,13 @@
             <td><%= r.gluten %></td>
             <td><%= r.dairy %></td>
             <td><%= r.vegan %></td>
-            <td><a href="/recipes/<%= r._id%>">Details</a></td>
-            <td><a href="recipes/<%= r._id%>/edit">Edit</a></td>
+            <td><a href="/recipes/<%= r._id%>" style="color:blue">Details</a></td>
+            <% if (r.author && r.author.equals(user && user._id)) { %>
+            <td><a href="recipes/<%= r._id%>/edit" style="color:blue">Edit</a></td>
             <td><form id="delete-form" action="/recipes/<%= r._id%>?_method=DELETE" method="POST">
             <button>Delete</button>
             </form></td>
+        <% } %>
         </tr>
     <% }); %>
 </tbody>

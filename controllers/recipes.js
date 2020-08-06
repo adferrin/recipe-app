@@ -41,6 +41,7 @@ function update(req, res) {
 
 function index(req, res) {
     Recipe.find({}, function(err, recipes) {
+        console.log('recipes', recipes);
         res.render('recipes/index', 
         { title: 'All Recipes', recipes, user: req.user});
     });
@@ -67,8 +68,7 @@ function create(req, res) {
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }
-    
-    
+    req.body.author = req.user._id;
     const recipe = new Recipe(req.body);
     recipe.save(function(err) {
     //handle errors

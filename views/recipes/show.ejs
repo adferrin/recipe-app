@@ -23,6 +23,7 @@
     <!-- end ingredients list -->
 </section>
 <!-- add ingredients form -->
+<% if (recipe.author && recipe.author.equals(user && user._id)) { %>
 <form id="add-per-to-factor" action="/recipes/<%= recipe._id%>/ingredients" method="POST">
 <select name="ingredientId">
     <%- ingredients.map(i => 
@@ -31,7 +32,7 @@
 </select>
     <button type="submit">Add Ingredient to Recipe</button>
 </form>
-
+<% } %>
     <h2>Reviews</h2>
     <form action="/recipes/<%= recipe._id%>/reviews"
         method="POST" id="add-review-form">

@@ -10,8 +10,7 @@ router.get('/users', usersCtrl.index);
 // therefore do not use /user/:id/recipes
 router.post('/recipes', isLoggedIn, usersCtrl.addRecipe);  
 
-//Delete recipes /recipes/:id
-// router.delete('/recipes/:id', isLoggedIn, usersCtrl.delRecipe);
+
 
 
 //Middleware for the isLoggedIn function 
