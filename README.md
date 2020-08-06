@@ -17,6 +17,12 @@ I created this web app for creating and storing recipes that have been tested an
 
 ![Imgur](https://i.imgur.com/1Vq1ZQa.png)
 
+![Imgur](https://i.imgur.com/zrdG66t.png)
+
+![Imgur](https://i.imgur.com/QlrLJgz.png)
+
+![Imgur](https://i.imgur.com/WR84F5C.png)
+
 # Technologies Used
 
 - JavaScript
