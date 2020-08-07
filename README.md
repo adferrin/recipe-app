@@ -25,13 +25,11 @@ Recette is a web app for creating and storing recipes that have been tested and 
 # Technologies Used
 
 - JavaScript
-- Nodejs
 - HTML
 - jQuery
 - Materialize
 - Mongoose
 - Express
-- dotenv
 - Morgan
 - Method Override
 - Passport
