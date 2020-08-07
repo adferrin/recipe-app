@@ -26,10 +26,11 @@ I created this web app for creating and storing recipes that have been tested an
 # Technologies Used
 
 - JavaScript
+- Nodejs
 - HTML
 - jQuery
 - Materialize
-- ejs
+- Mongoose
 - Express
 - dotenv
 - Morgan
