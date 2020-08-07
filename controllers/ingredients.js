@@ -7,24 +7,18 @@ module.exports = {
     new: newIngredient,
     create,
     addToFactor,
-    edit,
-    delete: removeIngredient,
+    edit
 };
 
 function edit(req, res) {
     Recipe.findById(req.params.id).populate('factor').exec(function(err, recipe) {
         Ingredient.find(
-            {_id: {$nin: recipe.factor}}, function(err, ingredient) {
-                res.render('recipes/edit', { title: 'Edit Recipe', recipe, ingredient, user: req.user});
+            {_id: {$nin: recipe.factor}}, function(err, ingredients) {
+                res.render('recipes/edit', { title: 'Edit Recipe', recipe, ingredients, user: req.user});
         }); 
     });
 }
 
-function removeIngredient(req, res){
-    Ingredient.findByIdAndDelete(req.params.id, function(err, ingredient) {
-        res.redirect('/recipes/edit')
-    });
-}
 
 function addToFactor(req, res) {
     Recipe.findById(req.params.id, function(err, recipe) {

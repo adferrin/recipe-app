@@ -4,6 +4,7 @@ const ingredientsCtrl = require('../controllers/ingredients');
 
 router.get('/ingredients/new', ingredientsCtrl.new);
 router.post('/ingredients', ingredientsCtrl.create);
+router.get('/:id/edit', ingredientsCtrl.edit);
 router.post('/recipes/:id/ingredients', ingredientsCtrl.addToFactor);
 
 
