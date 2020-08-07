@@ -22,11 +22,14 @@ function removeRecipe(req, res) {
     });
 }
 
+
 function edit(req, res) {
-    Recipe.findById(req.params.id, function(err, recipe) {
-        res.render('recipes/edit', {title: 'Edit Recipe', recipe, user: req.body})
+    Recipe.findById(req.params.id).populate('factor').exec(function(err, recipe) {
+        Ingredient.find(
+            {_id: {$nin: recipe.factor}}, function(err, ingredients) {
+                res.render('recipes/edit', { title: 'Edit Recipe', recipe, ingredients, user: req.user});
+        }); 
     });
-    
 }
 
 function update(req, res) {

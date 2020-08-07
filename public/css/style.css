@@ -1,12 +1,13 @@
+.brand-logo {
+    margin-left: 10px;
+}
 
 body {
     font-family: 'Lobster', cursive;
-    /* color: white; */
     font-size: 30px;
-    /* background: url('../images/food1.jpg') no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover; */
+    background-color: rgb(229, 232, 235);
+    margin-left: 10px;
+    
 }
 
 button {
@@ -16,21 +17,27 @@ button {
 input {
     font-family: 'Lobster', cursive;
     font-size: 30px;
-    /* color: white; */
+
 }
 
 label {
+    color: rgb(18, 95, 72);
     font-size: 30px;
-    /* color: white; */
 }
 
 span {
-    font-size: 28px;
-    /* color: white; */
+    font-size: 28px;  
 }
 
 form {
     font-family: 'Lobster', cursive;
     font-size: 25px;
-    /* color: white; */
+}
+
+th {
+    color: rgb(18, 95, 72);
+}
+
+#show {
+    color: rgb(18, 95, 72);
 }

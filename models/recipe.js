@@ -20,13 +20,13 @@ const recipeSchema = new Schema ({
     },
     process: String,
     gluten: {
-        type: Boolean, default: true 
+        type: Boolean, default: false 
     },
     dairy: {
-        type: Boolean, default: true
+        type: Boolean, default: false
     },
     vegan: {
-        type: Boolean
+        type: Boolean, default: false
     },
     author: {
         type: Schema.Types.ObjectId, ref: 'User'
